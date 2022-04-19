@@ -1,0 +1,5 @@
+node_modules
+.env
+cluster_apiKey_latest.txt
+nodejs.config
+yarn-error.log
