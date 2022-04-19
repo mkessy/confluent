@@ -1,0 +1,16 @@
+{
+  "name": "confluent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/ndjson": "^2.0.1",
+    "@types/node": "^17.0.25",
+    "fp-ts": "^2.11.10",
+    "kafkajs": "^1.16.0",
+    "ndjson": "^2.0.0",
+    "npx": "^10.2.2",
+    "typescript": "^4.6.3"
+  }
+}
