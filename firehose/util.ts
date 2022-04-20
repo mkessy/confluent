@@ -1,4 +1,6 @@
 import fs from "fs";
+import * as TE from "fp-ts/TaskEither";
+
 import readline from "readline";
 import { ParsedKafkaConfig } from "./types";
 
@@ -33,6 +35,14 @@ export async function configFromPath(path: string) {
     .map((line) => line.split("=").map((s) => s.trim()))
     .reduce((config: Record<string, string>, [k, v]) => {
       config[k] = v;
-      return config;
+      return config as ParsedKafkaConfig;
     }, {});
 }
+
+export const configTE = TE.tryCatch(
+  () =>
+    configFromPath(
+      "/Users/mkessy/Projects/confluent_kafka_example/confluent/nodejs.config"
+    ),
+  (reason) => `Failed to construct Kafka Config ${String(reason)}`
+);
